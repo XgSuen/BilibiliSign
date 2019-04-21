@@ -5,5 +5,5 @@
 今天我签到过了，所以看不到了（反正我是没找到）。总之拿到网址以后，直接requests就好啦</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后就是写界面了，这里用的是pyqt5写的，官方中文文档 https://github.com/maicss/PyQt5-Chinese-tutorial 在这里啦，可以去看着学，非常详细。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写完了以后可以打包成.exe文件，先 pip install pyinstaller，然后在文件目录下运行cmd，执行pyinstaller -w 你的文件.py就好了，使用介绍在这个博主这里
-http://www.pyinstaller.org/ 这里要说明一下，你打包之后，背景图片可能显示不出来，这种情况只要把你用的图片文件夹放到（前提是你代码引用的当前目录文件）打包后的
-dist文件内与.exe同级目录就OK了。</p> 
+http://www.pyinstaller.org/ 这里要说明一下，你打包之后，背景图片可能显示不出来，这种情况只要把你用的图片文件夹放到（前提是你代码引用的当前目录文件）打包后的dist文件内与.exe同级目录就OK了。</p> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结果图在images文件夹里面后面那两张QQ截图。</p>
