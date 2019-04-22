@@ -10,5 +10,5 @@ http://www.pyinstaller.org/ 这里要说明一下，你打包之后，背景图�
 <br />
 <p><b>随机显示名言功能加入</b></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这次在这个签到小程序界面加入随机显示名言功能，名言是从百度上爬取的青春名言。功能大概是，每次打开程序随机抽取一句名言显示在界面上，颜色也是随机的。代码改动如下：</p>
-<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/tree/master/images/up1.png" width="800" height="450" /></div>
-<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/tree/master/images/up2.png" width="800" height="450" /></div>
+<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/blob/master/images/up1.jpg" width="800" height="450" /></div>
+<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/blob/master/images/up1.jpg" width="800" height="450" /></div>
