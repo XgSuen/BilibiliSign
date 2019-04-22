@@ -7,3 +7,11 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写完了以后可以打包成.exe文件，先 pip install pyinstaller，然后在文件目录下运行cmd，执行pyinstaller -w 你的文件.py就好了，使用介绍在这个博主这里
 http://www.pyinstaller.org/ 这里要说明一下，你打包之后，背景图片可能显示不出来，这种情况只要把你用的图片文件夹放到（前提是你代码引用的当前目录文件）打包后的dist文件内与.exe同级目录就OK了。</p> 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结果图在images文件夹里面后面那两张QQ截图。</p>
+<br />
+<p><b>随机显示名言功能加入</b></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这次在这个签到小程序界面加入随机显示名言功能，名言是从百度上爬取的青春名言。功能大概是，每次打开程序随机抽取一句名言显示在界面上，颜色也是随机的。代码改动如下：</p>
+
+<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/blob/master/up1.png" width="800" height="450" /></div>
+
+
+<div align="center"><img src="https://github.com/foreversunx/BilibiliSign/blob/master/up2.png" width="800" height="450" /></div>
