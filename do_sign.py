@@ -1,7 +1,7 @@
 import sys
 import requests
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QLabel, QDialog, QMessageBox
-from PyQt5.QtGui import QIcon, QPixmap, QPainter
+from PyQt5.QtGui import QIcon, QPixmap, QPainter, QColor, QFont
 from PyQt5.QtCore import QCoreApplication, Qt
 import random
 import numpy as np
@@ -27,11 +27,27 @@ header = {
 #定义全局随机变量，用来设置随机背景
 i = random.choices(np.arange(6) + 1)
 
+#读取名言txt文件
+with open("青春.txt", 'r', encoding="utf-8") as f:
+    textLines = [txt.strip('\n').split('\t')[1:] for txt in f.readlines()]
+l = len(textLines)
+j = random.choices(np.arange(l))[0]
+#随机获取一句
+disp = textLines[j][1] + "——" + textLines[j][0]
+
+#随机rgbyanse
+r = random.randint(0,256)
+g = random.randint(0,256)
+b = random.randint(0,256)
+
 #写一个签到界面
 class DoSign(QWidget):
 
     def __init__(self):
         super().__init__()
+
+        #名言属性
+        self.text = disp
 
         #初始化界面
         self.initUI()
@@ -50,9 +66,21 @@ class DoSign(QWidget):
         painter = QPainter(self)
         painter.drawPixmap(self.rect(), pixmap)
 
+        #先画图片再画文字
+        self.drawText(event, painter)
+
+    def drawText(self, event, qp):
+        """
+        把名言花在界面上
+        """
+        qp.setPen(QColor(r, g, b))
+        qp.setFont(QFont("楷体", 20))
+
+        qp.drawText(event.rect(), Qt.AlignCenter | Qt.TextWordWrap, self.text)
+
     def initUI(self):
         #初始化窗体大小，设置title，设置图标，设置不能放大缩小
-        self.setGeometry(300, 300, 350, 220)
+        self.setGeometry(400, 400, 550, 380)
         self.setWindowTitle("Bilibili Sign")
         self.setWindowIcon(QIcon("sign.jpg"))
         self.setFixedSize(self.width(), self.height())
@@ -66,8 +94,8 @@ class DoSign(QWidget):
         signBtn.clicked.connect(self.sign_message)
 
         #设置按钮样式
-        closeBtn.setStyleSheet("border:4px groove gray;border-radius:10px;padding:2px 4px;font-family:Times New Roman;font-size:15Pt;font-weight:bold;color:#9900FF")
-        signBtn.setStyleSheet("border:4px groove gray;border-radius:10px;padding:2px 4px;font-family:Times New Roman;font-size:15Pt;font-weight:bold;color:#FF6633")
+        closeBtn.setStyleSheet("border:4px groove gray;border-radius:10px;padding:2px 4px;font-family:Times New Roman;font-size:20Pt;font-weight:bold;color:#9900FF")
+        signBtn.setStyleSheet("border:4px groove gray;border-radius:10px;padding:2px 4px;font-family:Times New Roman;font-size:20Pt;font-weight:bold;color:#FF6633")
 
         #按钮之见水平布局
         hbox = QHBoxLayout()
@@ -99,6 +127,7 @@ class DoSign(QWidget):
 app = QApplication(sys.argv)
 dosing = DoSign()
 sys.exit(app.exec_())
+
 
 
 
